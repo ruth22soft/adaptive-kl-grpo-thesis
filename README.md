@@ -74,7 +74,13 @@ ray job submit --address="http://127.0.0.1:8265" \
 Comming Soon！
 
 
-
 ### Evaluate
 
 We used [Qwen Math's codebase](https://github.com/QwenLM/Qwen2.5-Math/tree/main/evaluation) for evaluation, but for fairness considerations, we completely prohibited solving problems by calling code. Please follow the `/eval` instructions for evaluation
+
+## Acknowledgement
+We implement our reinforcement learning algorithm extending from [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF). We utilize [vLLM](https://github.com/vllm-project/vllm) for inference and develop evaluation scripts based on [Qwen2.5-Math](https://github.com/QwenLM/Qwen2.5-Math/tree/main/evaluation). 
+
+
+
+
