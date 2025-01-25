@@ -7,16 +7,10 @@
 
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://hkust-nlp.notion.site/simplerl-reason) 
 
-</div>
 
-This is a replicate of DeepSeek-R1-Zero training and DeepSeek-R1 training on small models with limited data
-
-## News
-
-- **[2025/01/25]** We release the training/eval code and our blog. We are working on the paper and will release it very soon.
+> Training dynamics of our Qwen2.5-SimpleRL-Zero training starting from the Qwen2.5-Math-7B, without SFT or reward models.
 
 
-## Introduction
 
 Many researchers are exploring possible paths towards learning o-style models, such as distillation, MCTS, process-based reward models, and reinforcement learning. Recently, both [DeepSeek-R1](https://github.com/deepseek-ai/DeepSeek-R1) and [Kimi-k1.5](https://github.com/MoonshotAI/Kimi-k1.5) demonstrate an extremely simple recipe on this path, using simple RL algorithms to learn emerging long CoT and self-reflection patterns and leading to strong results, where no MCTS and reward models are used. However, their experiments are based on  huge models in a large-scale RL setting. It remains unknown whether small models can demonstrate similar behaviors, how much data is needed, and how would the quantitative results compare with other approaches. We reproduce the training of DeepSeek-R1-Zero and DeepSeek-R1 for complex mathematical reasoning, starting from Qwen-2.5-Math-7B (base model), and only using 8K (query, final answer) examples from the original MATH dataset. We are surprised how far the 8K MATH examples lift this 7B base model without any other external signals:
 
@@ -49,6 +43,11 @@ Qwen2.5-7B-SimpleRL-Zero is the simple RL training from the base model directly,
 
 We are both excited and surprised by the significant gains achieved using only 8K MATH examples. Notably, while the MATH queries are considerably easier than many challenging benchmarks such as AIME and AMC, this simple RL recipe demonstrates remarkable generalization, with performance increasing by at least 10 absolute points compared to the base model. This easy-to-hard generalization effect is something we could not have envisioned with standard SFT training on the same dataset. We fully open-source our training code and details, hopefully as a strong baseline setup for the community to further explore the potential of RL for reasoning.
 
+
+## News
+
+- **[2025/01/25]** We release the training/eval code and our blog. We are working on the paper and will release it very soon.
+
 ## Quick Start
 
 ### Installation
@@ -72,12 +71,8 @@ ray start --head --node-ip-address 0.0.0.0 --num-gpus 8
 # if you want to launch ray on more nodes, use
 ray start --address {MASTER-NODE-ADDRESS}:6379  --num-gpus 8
 
-
 # Submit ray task on the master node
-
-
 cd train/examples/script
-
 ray job submit --address="http://127.0.0.1:8265" \
         --runtime-env-json='{
         "pip": ["ray==2.12.0", "latex2sympy2", "timeout_decorator"]
@@ -106,9 +101,12 @@ We used [Qwen Math's codebase](https://github.com/QwenLM/Qwen2.5-Math/tree/main/
 }
 ```
 
-## Acknowledgement
-We implement our reinforcement learning algorithm extending from [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF). We utilize [vLLM](https://github.com/vllm-project/vllm) for inference and develop evaluation scripts based on [Qwen2.5-Math](https://github.com/QwenLM/Qwen2.5-Math/tree/main/evaluation). 
 
+## Acknowledgement
+We implement our reinforcement learning algorithm extending from [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF). We utilize [vLLM](https://github.com/vllm-project/vllm) for inference and develop evaluation scripts based on [Qwen2.5-Math](https://github.com/QwenLM/Qwen2.5-Math/tree/main/evaluation). Particularly, we thank the developers of DeepSeek-R1 and Kimi-k1.5 for their innovation and contribution to the open-source community.
+
+## Starchart
+[![Star History Chart](https://api.star-history.com/svg?repos=hkust-nlp/simpleRL-reason&type=Date)](https://star-history.com/#hkust-nlp/simpleRL-reason&Date)
 
 
 
