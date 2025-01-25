@@ -11,6 +11,10 @@
 
 This is a replicate of DeepSeek-R1-Zero training and DeepSeek-R1 training on small models with limited data
 
+## News
+
+- **[2025/01/25]** We release the training/eval code and our blog. We are working on the paper and will release it very soon.
+
 
 ## Introduction
 
@@ -95,7 +99,7 @@ We used [Qwen Math's codebase](https://github.com/QwenLM/Qwen2.5-Math/tree/main/
 ```bibtex
 @misc{zeng2025emerging,
   title={7B Model and 8K Examples: Emerging Reasoning with Reinforcement Learning is Both Effective and Efficient},
-  author={Weihao Zeng and Yuzhen Huang and Wei Liu and Keing He and Qian Liu and Zejun Ma and Junxian He},
+  author={Weihao Zeng and Yuzhen Huang and Wei Liu and Keqing He and Qian Liu and Zejun Ma and Junxian He},
   year={2025},
   howpublished={\url{https://www.notion.so/hkust-nlp/7B-Model-and-8K-Examples-Emerging-Reasoning-with-Reinforcement-Learning-is-Both-Effective-and-Effic-18339bdc1c6b809c8942ec772aa49bd0#18439bdc1c6b80609728dfe813af594d}},
   note={Notion Blog}
