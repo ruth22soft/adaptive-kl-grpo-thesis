@@ -92,6 +92,7 @@ We used [Qwen Math's codebase](https://github.com/QwenLM/Qwen2.5-Math/tree/main/
 
 ## Citation
 
+```bibtex
 @misc{zeng2025emerging,
   title={7B Model and 8K Examples: Emerging Reasoning with Reinforcement Learning is Both Effective and Efficient},
   author={Weihao Zeng and Yuzhen Huang and Wei Liu and Keing He and Qian Liu and Zejun Ma and Junxian He},
@@ -99,6 +100,7 @@ We used [Qwen Math's codebase](https://github.com/QwenLM/Qwen2.5-Math/tree/main/
   howpublished={\url{https://www.notion.so/hkust-nlp/7B-Model-and-8K-Examples-Emerging-Reasoning-with-Reinforcement-Learning-is-Both-Effective-and-Effic-18339bdc1c6b809c8942ec772aa49bd0#18439bdc1c6b80609728dfe813af594d}},
   note={Notion Blog}
 }
+```
 
 ## Acknowledgement
 We implement our reinforcement learning algorithm extending from [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF). We utilize [vLLM](https://github.com/vllm-project/vllm) for inference and develop evaluation scripts based on [Qwen2.5-Math](https://github.com/QwenLM/Qwen2.5-Math/tree/main/evaluation). 
