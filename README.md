@@ -55,7 +55,7 @@ We are both excited and surprised by the significant gains achieved using only 8
 
 ### Installation
 
-Our code is implemented based on [OpenRLHF](https://github.com/OpenRLHF/OpenRLHF/tree/main?tab=readme-ov-file#installation). Please follow OpenRLHF's guidance to configure other environments and install our version:
+Our code is implemented based on OpenRLHF. Please follow [OpenRLHF's guidance](https://github.com/OpenRLHF/OpenRLHF/tree/main?tab=readme-ov-file#installation) to configure required environments and install our version:
 
 ```bash
 git clone https://github.com/hkust-nlp/simpleRL-reason.git
