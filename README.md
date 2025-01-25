@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# simpleRL-reason
+# 7B Model and 8K Examples: Emerging Reasoning with Reinforcement Learning is Both Effective and Efficient
 
 
 [![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/hkust-nlp/7B-Model-and-8K-Examples-Emerging-Reasoning-with-Reinforcement-Learning-is-Both-Effective-and-Effic-18339bdc1c6b809c8942ec772aa49bd0#18439bdc1c6b80609728dfe813af594d) 
