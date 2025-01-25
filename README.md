@@ -5,7 +5,7 @@
 # 7B Model and 8K Examples: Emerging Reasoning with Reinforcement Learning is Both Effective and Efficient
 
 
-[![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://www.notion.so/hkust-nlp/7B-Model-and-8K-Examples-Emerging-Reasoning-with-Reinforcement-Learning-is-Both-Effective-and-Effic-18339bdc1c6b809c8942ec772aa49bd0#18439bdc1c6b80609728dfe813af594d) 
+[![Notion](https://img.shields.io/badge/Notion-%23000000.svg?style=for-the-badge&logo=notion&logoColor=white)](https://hkust-nlp.notion.site/simplerl-reason) 
 
 </div>
 
@@ -101,7 +101,7 @@ We used [Qwen Math's codebase](https://github.com/QwenLM/Qwen2.5-Math/tree/main/
   title={7B Model and 8K Examples: Emerging Reasoning with Reinforcement Learning is Both Effective and Efficient},
   author={Weihao Zeng and Yuzhen Huang and Wei Liu and Keqing He and Qian Liu and Zejun Ma and Junxian He},
   year={2025},
-  howpublished={\url{https://www.notion.so/hkust-nlp/7B-Model-and-8K-Examples-Emerging-Reasoning-with-Reinforcement-Learning-is-Both-Effective-and-Effic-18339bdc1c6b809c8942ec772aa49bd0#18439bdc1c6b80609728dfe813af594d}},
+  howpublished={\url{https://hkust-nlp.notion.site/simplerl-reason}},
   note={Notion Blog}
 }
 ```
