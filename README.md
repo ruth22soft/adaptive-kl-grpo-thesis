@@ -100,6 +100,9 @@ If you find this blog or our code useful, we would appreciate it if you could ci
 @misc{zeng2025simplerl,
   title={7B Model and 8K Examples: Emerging Reasoning with Reinforcement Learning is Both Effective and Efficient},
   author={Weihao Zeng and Yuzhen Huang and Wei Liu and Keqing He and Qian Liu and Zejun Ma and Junxian He},
+  year={2025},
+  howpublished={\url{https://hkust-nlp.notion.site/simplerl-reason}},
+  note={Notion Blog}
   year={2025}
 }
 ```
