@@ -94,13 +94,13 @@ We used [Qwen Math's codebase](https://github.com/QwenLM/Qwen2.5-Math/tree/main/
 
 ## Citation
 
+If you find this blog or our code useful, we would appreciate it if you could cite our work:
+
 ```bibtex
-@misc{zeng2025emerging,
+@misc{zeng2025simplerl,
   title={7B Model and 8K Examples: Emerging Reasoning with Reinforcement Learning is Both Effective and Efficient},
   author={Weihao Zeng and Yuzhen Huang and Wei Liu and Keqing He and Qian Liu and Zejun Ma and Junxian He},
-  year={2025},
-  howpublished={\url{https://hkust-nlp.notion.site/simplerl-reason}},
-  note={Notion Blog}
+  year={2025}
 }
 ```
 
