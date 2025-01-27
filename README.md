@@ -81,7 +81,7 @@ ray job submit --address="http://127.0.0.1:8265" \
         "pip": ["ray==2.12.0", "latex2sympy2", "timeout_decorator"]
     }' -- /bin/bash train_ppo_qwen_base_math_lv35_new.sh
 ```
-The minimum hardware requirement for this process is 1 node with 8 H100-80G GPUs. The corresponding script for this setup is train_ppo_qwen_base_math_lv35_new_1_node.sh, although this configuration has not yet been tested. (You also need to launch the Ray cluster first.)
+The minimum hardware requirement for this process is 1 node with 8 H100-80G GPUs. The corresponding script for this setup is [train_ppo_qwen_base_math_lv35_new_1_node.sh](https://github.com/hkust-nlp/simpleRL-reason/blob/main/train/examples/script/train_ppo_qwen_base_math_lv35_1_node.sh), although this configuration has not yet been tested. (You also need to launch the Ray cluster first.)
 
 ### Reproducing SimpleRL
 
