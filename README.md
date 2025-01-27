@@ -65,8 +65,7 @@ pip install -e .
 ```
 
 ### Reproducing SimpleRL-Zero
-
-We use PPO with Ray and vLLM acceleration for training:
+We utilize 4 nodes, each with 8 H100-80G GPUs, to train on 8K MATH examples for 2 days. The training process leverages PPO with Ray and vLLM acceleration. Below are the commands for launching the Ray cluster and submitting the training task:
 
 ```bash
 # launch the master node of ray in container
@@ -75,13 +74,14 @@ ray start --head --node-ip-address 0.0.0.0 --num-gpus 8
 # if you want to launch ray on more nodes, use
 ray start --address {MASTER-NODE-ADDRESS}:6379  --num-gpus 8
 
-# Submit ray task on the master node
+# Submit the Ray task from the master node
 cd train/examples/script
 ray job submit --address="http://127.0.0.1:8265" \
         --runtime-env-json='{
         "pip": ["ray==2.12.0", "latex2sympy2", "timeout_decorator"]
     }' -- /bin/bash train_ppo_qwen_base_math_lv35_new.sh
 ```
+The minimum hardware requirement for this process is 1 node with 8 H100-80G GPUs. The corresponding script for this setup is train_ppo_qwen_base_math_lv35_new_1_node.sh, although this configuration has not yet been tested. (You also need to launch the Ray cluster first.)
 
 ### Reproducing SimpleRL
 
