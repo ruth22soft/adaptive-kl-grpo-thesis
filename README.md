@@ -65,23 +65,35 @@ pip install -e .
 ```
 
 ### Reproducing SimpleRL-Zero
-We utilize 4 nodes, each with 8 H/A100-80G GPUs, to train on 8K MATH examples for 2 days. The training process leverages PPO with Ray and vLLM acceleration. Below are the commands for launching the Ray cluster and submitting the training task:
+The minimum hardware requirement for training is 6 H/A100-80G GPUs (note: this configuration has not been tested yet). To accelerate our experiments, we used 4 nodes, each equipped with 8 H/A100-80G GPUs, to train on 8K MATH examples for 120 steps over approximately 1.5 days, achieving convergence. However, our results indicate that satisfactory performance can be achieved with around 60 steps, which requires less than one day of training using 4 nodes.
 
+The training process leverages PPO with Ray and vLLM for acceleration. So firstly, you need to launch the ray cluster using the command below:
 ```bash
 # launch the master node of ray in container
 ray start --head --node-ip-address 0.0.0.0 --num-gpus 8
 
 # if you want to launch ray on more nodes, use
 ray start --address {MASTER-NODE-ADDRESS}:6379  --num-gpus 8
+```
 
-# Submit the Ray task from the master node
-cd train/examples/script
+Next, submit the training job from the master node:
+
+```bash
+cd train
+# For 4 nodes:
 ray job submit --address="http://127.0.0.1:8265" \
         --runtime-env-json='{
         "pip": ["ray==2.12.0", "latex2sympy2", "timeout_decorator"]
-    }' -- /bin/bash train_ppo_qwen_base_math_lv35_new.sh
+    }' -- /bin/bash /examples/script/train_ppo_qwen_base_math_lv35_new.sh
+
+# For 1 node:
+ray job submit --address="http://127.0.0.1:8265" \
+        --runtime-env-json='{
+        "pip": ["ray==2.12.0", "latex2sympy2", "timeout_decorator"]
+    }' -- /bin/bash /examples/script/train_ppo_qwen_base_math_lv35_new_1_node.sh
+
 ```
-The minimum hardware requirement is 6 H/A100-80G GPUs. The corresponding script for this setup is [train_ppo_qwen_base_math_lv35_new_1_node.sh](https://github.com/hkust-nlp/simpleRL-reason/blob/main/train/examples/script/train_ppo_qwen_base_math_lv35_1_node.sh), although this configuration has not yet been tested. (You also need to launch the Ray cluster first.)
+
 
 ### Reproducing SimpleRL
 
