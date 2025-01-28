@@ -84,13 +84,13 @@ cd train
 ray job submit --address="http://127.0.0.1:8265" \
         --runtime-env-json='{
         "pip": ["ray==2.12.0", "latex2sympy2", "timeout_decorator"]
-    }' -- /bin/bash /examples/script/train_ppo_qwen_base_math_lv35_new.sh
+    }' -- /bin/bash examples/script/train_ppo_qwen_base_math_lv35_new.sh
 
 # For 1 node:
 ray job submit --address="http://127.0.0.1:8265" \
         --runtime-env-json='{
         "pip": ["ray==2.12.0", "latex2sympy2", "timeout_decorator"]
-    }' -- /bin/bash /examples/script/train_ppo_qwen_base_math_lv35_new_1_node.sh
+    }' -- /bin/bash examples/script/train_ppo_qwen_base_math_lv35_1_node.sh
 
 ```
 
