@@ -125,7 +125,9 @@ class vLLMRollout(BaseRollout):
             elif "7b-v0.1" in config.model_path.lower():
                 kwargs['stop_token_ids'] = [22478, 24994, 26307, 9977, 933, 2820] # Question, Answer, \nStep
         elif "llama" in config.model_path.lower():
-            kwargs['stop_token_ids'] = [14924, 16533] #Question, Answer
+            # Use the checkpoint tokenizer's native EOS token.
+            # This supports Llama variants with different vocabularies/special tokens.
+            kwargs['stop_token_ids'] = [tokenizer.eos_token_id]
         elif "deepseek-math" in  config.model_path.lower():
             kwargs['stop_token_ids'] = [3631, 81038, 5726, 77398, 6713] # user, assistant, system
         elif "qwen2.5" in config.model_path.lower():
