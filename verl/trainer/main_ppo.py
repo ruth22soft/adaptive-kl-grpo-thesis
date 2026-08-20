@@ -20,6 +20,7 @@ import torch
 from verl.utils.reward_score import gsm8k, math
 from verl.trainer.ppo.ray_trainer import RayPPOTrainer
 from verl.utils.reward_score import kk
+from verl.utils.reward_score import amharic_text_reward
 # from verl.utils.reward_score import simplelr_math
 # from verl.utils.reward_score import deepseek_r1
 from verl.utils.reward_score import hf_math_verify
@@ -34,8 +35,10 @@ def _default_compute_score(data_source, solution_str, ground_truth):
     
     elif "kk" in data_source:
         return kk.compute_score(solution_str, ground_truth)
+    elif "amharic" in data_source.lower() or "amharic" in (ground_truth or '').lower():
+        return amharic_text_reward.compute_score(solution_str, ground_truth)
     elif "simplelr" in data_source:
-        return hf_math_verify.compute_score(solution_str, ground_truth)
+        return amharic_text_reward.compute_score(solution_str, ground_truth)
     elif "deepseek_r1" in data_source:
         return deepseek_r1.compute_score(solution_str, ground_truth)
     else:

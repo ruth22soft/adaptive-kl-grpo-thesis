@@ -8,8 +8,9 @@ data:
   train_files: /data/simplelr_qwen_level3to5/train.parquet
   val_files: /data/simplelr_qwen_level3to5/test.parquet
   prompt_key: prompt
-  max_prompt_length: 1024
-  max_response_length: 1024
+  # Keep the total sequence within the model context window: 512 + 512 = 1024 total.
+  max_prompt_length: 512
+  max_response_length: 512
   train_batch_size: 16
   val_batch_size: 16
   return_raw_input_ids: False
@@ -174,7 +175,7 @@ trainer:
   # Set to -1 to disable saving.
   save_freq: 50
   resume_mode: auto
-  resume_from_path: False
+  resume_from_path: /ckpts/simplelr_grpo_amharic_ctx1024
   # avoid the expensive initial validation pass; final validation still runs at the end
   val_before_train: False
   # optional periodic validation during training (-1 disables; final validation still runs)
@@ -183,5 +184,5 @@ trainer:
   remove_clip: False
   default_hdfs_dir: null
   default_local_dir: /ckpts/simplelr_grpo_amharic_ctx1024
-  # Keep only the latest checkpoint to avoid filling the disk.
-  remove_previous_ckpt: True
+  # Keep prior checkpoint state so the run can resume after an interruption.
+  remove_previous_ckpt: False
