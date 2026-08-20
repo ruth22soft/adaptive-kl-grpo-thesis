@@ -120,4 +120,5 @@ nohup.out
 examples/data_preprocess/converted_data
 examples/data_preprocess/data
 
-model_scope_model
+model_scope_modeldata/amharic_text_generation/train.parquet
+data/amharic_text_generation/train.parquet
