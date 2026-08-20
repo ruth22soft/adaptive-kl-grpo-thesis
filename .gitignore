@@ -122,3 +122,4 @@ examples/data_preprocess/data
 
 model_scope_modeldata/amharic_text_generation/train.parquet
 data/amharic_text_generation/train.parquet
+data/amharic_text_generation/train.parquet
